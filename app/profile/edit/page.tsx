@@ -31,7 +31,7 @@ export default async function EditProfile() {
 
   return (
     <div>
-      Edit Profile
+      <h1 className="font-semibold text-xl mb-10">Edit profile</h1>
       <ProfileForm />
     </div>
   );

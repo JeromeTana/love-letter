@@ -27,8 +27,8 @@ export default function DialogComponent({
     <Dialog modal open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>{triggerButton}</DialogTrigger>
       <DialogContent>
-        <DialogHeader>
-          {header}
+        <DialogHeader hidden>
+          {/* {header} */}
           <DialogTitle hidden />
         </DialogHeader>
         {children}
