@@ -19,7 +19,7 @@ export function DatePicker({ field, placeholder = "Pick a date" }: any) {
           <Button
             variant={"outline"}
             className={cn(
-              "w-full pl-3 text-left font-normal",
+              "w-full pl-3 !py-5 text-base text-left font-normal rounded-lg bg-white",
               !field.value && "text-muted-foreground"
             )}
           >

@@ -30,9 +30,9 @@ export default async function CreateProfile() {
   await checkProfile();
 
   return (
-    <div>
-      CreateProfile
+    <main>
+      <h1 className="font-semibold text-xl mb-10">Create profile</h1>
       <ProfileForm />
-    </div>
+    </main>
   );
 }

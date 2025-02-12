@@ -22,6 +22,7 @@ import { useForm } from "react-hook-form";
 import { User } from "@supabase/supabase-js";
 import { useRouter } from "next/navigation";
 import { IProfile } from "@/types/profile";
+import CtaButton from "../ctaButton";
 
 const formSchema = z.object({
   username: z
@@ -118,7 +119,7 @@ export default function ProfileForm() {
               <FormLabel>Username</FormLabel>
               <FormControl>
                 <div className="flex items-center gap-1">
-                  <p className="text-neutral-500">sendloveletter.link/</p>
+                  <p className="text-neutral-500 font-semibold">SENDLOVELETTER.LINK/</p>
                   <Input placeholder="jerometanaa" {...field} />
                 </div>
               </FormControl>
@@ -140,9 +141,13 @@ export default function ProfileForm() {
             </FormItem>
           )}
         />
-        <Button disabled={form.formState.isSubmitting} type="submit">
+        <CtaButton
+          type="submit"
+          disabled={form.formState.isSubmitting}
+          className="w-full"
+        >
           Save
-        </Button>
+        </CtaButton>
       </form>
     </Form>
   );
