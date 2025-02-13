@@ -23,7 +23,6 @@ export default async function Home() {
   const session = await supabase.auth.getUser();
   if (!session.data?.user) {
     return redirect("/auth");
-    
   }
 
   // Check if the user has a profile
