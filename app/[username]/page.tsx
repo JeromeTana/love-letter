@@ -133,7 +133,7 @@ export default function SendPage() {
         <div>
           <LetterForm username={username as string} setIsOpen={setIsOpen} />
           <div className="mt-2">
-            <Link href={`/auth`}>
+            <Link href={`/auth`} target="_blank">
               <CtaButton className="w-full bg-neutral-200 hover:bg-neutral-300 text-black">
                 Get my own love letters
               </CtaButton>
@@ -166,7 +166,7 @@ export default function SendPage() {
             <h2 className="text-2xl font-semibold">Love sent! </h2>
             <div className="flex flex-col gap-4 mt-10">
               <div className="mt-2">
-                <Link href={`/auth`}>
+                <Link href={`/auth`} target="_blank">
                   <CtaButton className="w-full">
                     Get my own love letters
                   </CtaButton>
