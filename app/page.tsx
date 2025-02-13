@@ -1,4 +1,5 @@
 import { signOut } from "@/actions/auth";
+import Collapsible from "@/components/collapsible";
 import CopyUrlButton from "@/components/copyUrlButton";
 import LetterItem from "@/components/letterItem";
 import { Button } from "@/components/ui/button";
@@ -49,6 +50,7 @@ export default async function Home() {
 
   const recentlyRevealed = letters.filter(
     (letter: ILetter) =>
+      letter.sender &&
       letter.revealed_at &&
       new TZDate().getTime() > new TZDate(letter.revealed_at).getTime() &&
       new TZDate().getTime() - new TZDate(letter.revealed_at).getTime() <
@@ -127,17 +129,19 @@ export default async function Home() {
       </div>
       <div className="mt-12 space-y-8">
         {recentlyRevealed.length > 0 && (
-          <div className="flex flex-col gap-3">
-            <p className="inline-flex items-center gap-1 text-neutral-500 font-medium text-xs">
-              <Mail size={12} />
-              RECENTLY REVEALED
-            </p>
-            <div className="flex flex-col gap-2">
-              {recentlyRevealed.map((letter: ILetter) => (
-                <LetterItem key={letter.id} letter={letter} />
-              ))}
+          <Collapsible>
+            <div className="flex flex-col gap-3">
+              <p className="inline-flex items-center gap-1 text-primary font-medium text-xs">
+                <Mail size={12} />
+                RECENTLY REVEALED
+              </p>
+              <div className="flex flex-col gap-2">
+                {recentlyRevealed.map((letter: ILetter) => (
+                  <LetterItem key={letter.id} letter={letter} />
+                ))}
+              </div>
             </div>
-          </div>
+          </Collapsible>
         )}
         <div className="flex flex-col gap-3">
           <p className="inline-flex items-center gap-1 text-neutral-500 font-medium text-xs">
