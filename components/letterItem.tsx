@@ -88,6 +88,7 @@ export default function LetterItem({ letter }: { letter: ILetter }) {
                     revealed_at={letter.revealed_at}
                   />
                   <RevealCountdown
+                    sender={letter.sender}
                     revealed_at={letter.revealed_at}
                     created_at={letter.created_at}
                   />
@@ -119,6 +120,7 @@ function LetterTemplate({ letter }: { letter: ILetter }) {
         <div>
           <Sender sender={letter.sender} revealed_at={letter.revealed_at} />
           <RevealCountdown
+            sender={letter.sender}
             revealed_at={letter.revealed_at}
             created_at={letter.created_at}
           />
@@ -192,15 +194,17 @@ function Sender({
 }
 
 function RevealCountdown({
+  sender,
   revealed_at,
   created_at,
 }: {
+  sender: string;
   revealed_at: string;
   created_at: string;
 }) {
   return (
     <div className="text-sm">
-      {new TZDate(revealed_at) > new Date() ? (
+      {sender && new TZDate(revealed_at) > new Date() ? (
         <p className="inline-flex items-center gap-1 text-primary">
           <Clock size={14} />
           Reveal in {countDown(formatDateTimeZone(revealed_at).toISOString())}
