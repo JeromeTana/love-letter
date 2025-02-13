@@ -1,6 +1,7 @@
 import { signInWithGoogle } from "@/actions/auth";
 import CtaButton from "@/components/ctaButton";
 import Footer from "@/components/footer";
+import { BiGoogle } from "@/components/icons/google";
 import { Heart, Key } from "lucide-react";
 import React from "react";
 
@@ -14,7 +15,7 @@ export default function AuthPage() {
         </h1>
       </div>
       <CtaButton onClick={signInWithGoogle}>
-        <Key />
+        <BiGoogle />
         Continue with google
       </CtaButton>
       <Footer className="fixed bottom-0 left-0 mb-4" />
