@@ -17,6 +17,7 @@ import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
 import React from "react";
 import { signInWithGoogle } from "@/actions/auth";
+import Link from "next/link";
 
 export default function SendPage() {
   const supabase = createClient();
@@ -132,12 +133,11 @@ export default function SendPage() {
         <div>
           <LetterForm username={username as string} setIsOpen={setIsOpen} />
           <div className="mt-2">
-            <CtaButton
-              onClick={signInWithGoogle}
-              className="w-full bg-neutral-200 hover:bg-neutral-300 text-black"
-            >
-              Get my own love letters
-            </CtaButton>
+            <Link href={`/auth`}>
+              <CtaButton className="w-full bg-neutral-200 hover:bg-neutral-300 text-black">
+                Get my own love letters
+              </CtaButton>
+            </Link>
             <p className="text-center text-sm mt-2 text-neutral-500">
               Join {userCount} beloved people now
             </p>
@@ -166,9 +166,11 @@ export default function SendPage() {
             <h2 className="text-2xl font-semibold">Love sent! </h2>
             <div className="flex flex-col gap-4 mt-10">
               <div className="mt-2">
-                <CtaButton onClick={signInWithGoogle} className="w-full">
-                  Get my own love letters
-                </CtaButton>
+                <Link href={`/auth`}>
+                  <CtaButton className="w-full">
+                    Get my own love letters
+                  </CtaButton>
+                </Link>
                 <p className="text-center text-sm mt-2 text-neutral-500">
                   Join {userCount} beloved people now
                 </p>
