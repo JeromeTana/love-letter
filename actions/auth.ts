@@ -13,6 +13,10 @@ const signInWith = (provider: Provider) => async () => {
     provider,
     options: {
       redirectTo: auth_callback_url,
+      queryParams: {
+        access_type: "offline",
+        prompt: "consent",
+      },
     },
   });
 
