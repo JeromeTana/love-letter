@@ -16,7 +16,7 @@ export default function AuthPage() {
       </div>
       <CtaButton onClick={signInWithGoogle}>
         <BiGoogle />
-        Continue with google
+        <p className="ml-2">Continue with Google</p>
       </CtaButton>
       <Footer className="fixed bottom-0 left-0 mb-4" />
     </div>
