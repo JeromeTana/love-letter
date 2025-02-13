@@ -116,7 +116,8 @@ export default function SendPage() {
               className="rounded-full bg-primary-foreground"
             />
           ) : (
-            <UserCircle size={80} className="rounded-full" />
+            // <UserCircle size={80} className="rounded-full" />
+            <div className="w-20 aspect-square rounded-full bg-primary-foreground" />
           )}
           <div>
             <div className="flex items-center gap-2">
