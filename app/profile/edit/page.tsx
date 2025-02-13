@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 import React from "react";
 
 export default async function EditProfile() {
-  const supabase = createClient();
+  const supabase = await createClient();
 
   const checkProfile = async () => {
     const session = await supabase.auth.getUser();
