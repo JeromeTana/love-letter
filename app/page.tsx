@@ -89,7 +89,7 @@ export default async function Home() {
       <div className="text-center">
         <div className="flex flex-col items-center gap-3">
           <Image
-            src={profile.avatar_url}
+            src={profile.avatar_url.replace("s96-c", "s400-c")}
             alt="User profile picture"
             width={140}
             height={140}
