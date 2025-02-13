@@ -109,7 +109,7 @@ export default function SendPage() {
         <div className="flex items-center gap-3 mb-8 mt-4">
           {user?.avatar_url ? (
             <Image
-              src={user?.avatar_url.replace("s96-c", "100-c")}
+              src={user?.avatar_url.replace("s96-c", "s120-c")}
               alt={user?.display_name}
               width={80}
               height={80}
