@@ -1,7 +1,6 @@
 import { signInWithGoogle } from "@/actions/auth";
 import CtaButton from "@/components/ctaButton";
 import Footer from "@/components/footer";
-import OneTapComponent from "@/components/oneTapGoogleOauth";
 import { Heart, Key } from "lucide-react";
 import React from "react";
 
@@ -14,7 +13,6 @@ export default function AuthPage() {
           Love<span className="font-semibold">Letter</span>
         </h1>
       </div>
-      <OneTapComponent />
       <CtaButton onClick={signInWithGoogle}>
         <Key />
         Continue with google
