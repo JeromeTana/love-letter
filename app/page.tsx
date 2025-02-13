@@ -22,10 +22,7 @@ export default async function Home() {
   // Check if the user is authenticated
   const session = await supabase.auth.getUser();
   if (!session.data?.user) {
-    // return redirect("/auth");
-    console.log("User not authenticated");
-    console.log(session);
-    return;
+    return redirect("/auth");
     
   }
 
