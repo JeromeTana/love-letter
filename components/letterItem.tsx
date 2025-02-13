@@ -124,7 +124,7 @@ function LetterTemplate({ letter }: { letter: ILetter }) {
           />
         </div>
       </div>
-      <p className="p-3 min-h-80 bg-primary-foreground rounded-xl">
+      <p className="p-3 h-80 bg-primary-foreground rounded-xl overflow-y-scroll">
         {letter.message}
       </p>
       {letter.spotify_id && (
